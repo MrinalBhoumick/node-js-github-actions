@@ -14,8 +14,6 @@ jobs:
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} 
       - name: Build docker image
         run: docker build -t mrinal-devXzone/nodejs-app .
-      - name: Tag the image
-        run: docker tag mrinal-devXzone/nodejs-app:latest
       - name: Publish image to docker hub
         run: docker push mrinal-devXzone/nodejs-app:latest
         
